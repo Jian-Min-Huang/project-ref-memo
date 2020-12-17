@@ -1,0 +1,12 @@
+###
+POST localhost:8080/auth
+Content-Type: application/json
+
+{
+  "account": "Vincent",
+  "password": "!QAZ2wsx"
+}
+
+###
+GET localhost:8080/demo
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJqaWFubWluaHVhbmcuY2MiLCJzdWIiOiJWaW5jZW50IiwiZXhwIjoxNjA4MjA3MDQ2LCJuYmYiOjE2MDgyMDUyNDYsImlhdCI6MTYwODIwNTI0Nn0.SA5i7uUn5cKt51rpsOzUEu01rm0C2NfUUrDqrVtdBM5vbmfE-3WOS5VPiDZJkmC_dNnszlRaL9avxp5NX575gg
