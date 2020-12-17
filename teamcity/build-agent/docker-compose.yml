@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  server:
+    image: jetbrains/teamcity-server:${VERSION}
+    expose:
+      - 8111
+    ports:
+      - 8111:8111
+    environment:
+      - TZ=Asia/Taipei
+    networks:
+      - default
+  agent:
+    image: jetbrains/teamcity-agent:${VERSION}
+    environment:
+      - TZ=Asia/Taipei
+      - SERVER_URL=http://server:8111
+    networks:
+      - default
+    depends_on:
+      - server
+
+networks:
+  default:
