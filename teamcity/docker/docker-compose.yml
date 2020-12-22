@@ -1,0 +1,44 @@
+services:
+  server:
+    image: jetbrains/teamcity-server:${VERSION}
+    privileged: true
+    expose:
+      - 8111
+    ports:
+      - 8111:8111
+    environment:
+      - TZ=Asia/Taipei
+      - TEAMCITY_SERVER_MEM_OPTS=-Xmx4096m -XX:ReservedCodeCacheSize=1024m
+    networks:
+      - default
+  agent1:
+    image: jianminhuang/teamcity-agent:${VERSION}
+    privileged: true
+    environment:
+      - TZ=Asia/Taipei
+      - TEAMCITY_AGENT_MEM_OPTS=-Xmx4096m -XX:ReservedCodeCacheSize=1024m
+      - SERVER_URL=http://server:8111
+      - AGENT_NAME=Kobe Bryant
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - default
+    depends_on:
+      - server
+  agent2:
+    image: jianminhuang/teamcity-agent:${VERSION}
+    privileged: true
+    environment:
+      - TZ=Asia/Taipei
+      - TEAMCITY_AGENT_MEM_OPTS=-Xmx4096m -XX:ReservedCodeCacheSize=1024m
+      - SERVER_URL=http://server:8111
+      - AGENT_NAME=Lebron James
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - default
+    depends_on:
+      - server
+
+networks:
+  default:
