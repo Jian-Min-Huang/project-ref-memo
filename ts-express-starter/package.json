@@ -1,0 +1,26 @@
+{
+  "name": "ts-express-starter",
+  "version": "1.0.0",
+  "description": "ts express starter",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jian-Min-Huang/ts-express-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jian-Min-Huang/ts-express-starter/issues"
+  },
+  "homepage": "https://github.com/Jian-Min-Huang/ts-express-starter#readme",
+  "dependencies": {
+    "@types/express": "^4.17.2",
+    "express": "^4.17.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  }
+}
