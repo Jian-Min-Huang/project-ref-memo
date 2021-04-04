@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: health-exporter
+  labels:
+    app: health-exporter
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: health-exporter
+  template:
+    metadata:
+      labels:
+        app: health-exporter
+    spec:
+      containers:
+        - name: health-exporter
+          env:
+            - name: SERVER_INFO
+              valueFrom:
+                configMapKeyRef:
+                  key: SERVER_INFO
+                  name: health-exporter
+          image: jianminhuang/health-exporter:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: health-exporter
+  labels:
+    app: health-exporter
+spec:
+  ports:
+    - name: metrics
+      port: 5000
+      protocol: TCP
+      targetPort: 5000
+  selector:
+    app: health-exporter
