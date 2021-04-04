@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<vms-conf>
+	<Connection ip="127.0.0.1" port="13111" />
+	<JmxSetting ip="127.0.0.1" port="9999" passwordFilePath="./conf/jmx_authen.conf" accessFilePath="./conf/jmx_author.conf" />
+	<VQueues>
+		<VQueue instanceName="vQueue" implementClassName="org.yfr.vms.vqueue.VQueue" objectName="org.yfr.vms.vqueue:type=vQueue" isLogging="false" loggingFileName="vQueue" isCheckTimeout="true" elementTimeoutTime_ms="2000"
+			checkElementTimeoutPeriod_ms="1000" consumersCount="2" />
+		<VQueue instanceName="vTakingQueue" implementClassName="org.yfr.vms.vqueue.VQueue" objectName="org.yfr.vms.vqueue:type=vTakingQueue" isLogging="false" loggingFileName="vTakingQueue" isCheckTimeout="false" elementTimeoutTime_ms="2000"
+			checkElementTimeoutPeriod_ms="1000" consumersCount="0" />
+	</VQueues>
+	<VTopics>
+		<VQueue instanceName="vTopic" implementClassName="org.yfr.vms.vtopic.VTopic" objectName="org.yfr.vms.vtopic:type=vTopic" isLogging="false" loggingFileName="vTopic" isCheckTimeout="true" elementTimeoutTime_ms="2000"
+			checkElementTimeoutPeriod_ms="1000" consumersCount="2" />
+	</VTopics>
+</vms-conf>

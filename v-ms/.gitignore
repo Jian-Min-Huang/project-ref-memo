@@ -1,0 +1,13 @@
+# Eclipse
+/.settings/
+.classpath
+.project
+
+# Intellij IDEA
+*.iml
+
+# Maven
+/target/
+
+# VMS
+/v-queue-data/
