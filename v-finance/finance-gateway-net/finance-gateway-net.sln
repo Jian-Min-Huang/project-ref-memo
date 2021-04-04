@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapitalGateway", "CapitalGateway\CapitalGateway.csproj", "{B8F7E2CF-10D2-4C48-890E-EB29FCE100A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinopacGateway", "SinopacGateway\SinopacGateway.csproj", "{B5D5AA50-2884-4280-9B88-C2EAFEBDCDCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8F7E2CF-10D2-4C48-890E-EB29FCE100A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F7E2CF-10D2-4C48-890E-EB29FCE100A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F7E2CF-10D2-4C48-890E-EB29FCE100A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F7E2CF-10D2-4C48-890E-EB29FCE100A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D5AA50-2884-4280-9B88-C2EAFEBDCDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D5AA50-2884-4280-9B88-C2EAFEBDCDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D5AA50-2884-4280-9B88-C2EAFEBDCDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D5AA50-2884-4280-9B88-C2EAFEBDCDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

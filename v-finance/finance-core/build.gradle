@@ -1,0 +1,39 @@
+buildscript {
+    ext {
+        springBootVersion = "2.0.0.RELEASE"
+//        springIntegrationVersion = "5.0.3.RELEASE"
+    }
+
+}
+
+apply plugin: "java"
+
+group 'org.yfr'
+version '0.0.1'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+
+    compile("org.projectlombok:lombok:1.16.18")
+
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.3")
+    compile("org.hibernate:hibernate-java8:5.0.12.Final")
+
+    compile files("libs/ojdbc6-11.2.0.3.0.jar")
+
+    compile("io.projectreactor:reactor-core:3.1.8.RELEASE")
+
+    compile("org.telegram:telegrambots:3.6.1")
+
+    compile("com.typesafe:config:1.3.2")
+
+    compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}

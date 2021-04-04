@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="./HourMa.js"></script>
+</head>
+<body>
+<button id="previous" onclick="doPrevious()">Previous</button>
+<button id="next" onclick="doNext()">Next</button>
+<canvas id="myChart" width="400" height="170"></canvas>
+<canvas id="barChart" width="400" height="30"></canvas>
+<script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var barCtx = document.getElementById("barChart").getContext("2d");
+    var chart = newChart(0);
+    var barChart = newBarChart(0);
+
+    var idx = 0;
+
+    function doPrevious() {
+        if (idx > 0) {
+            idx--;
+        }
+
+        chart.destroy();
+        chart = newChart(idx);
+
+        barChart.destroy();
+        barChart = newBarChart(idx);
+    }
+
+    function doNext() {
+        if (idx != countSize - 1) {
+            idx++
+        }
+
+        chart.destroy();
+        chart = newChart(idx);
+
+        barChart.destroy();
+        barChart = newBarChart(idx);
+    }
+
+    function newChart(index) {
+        return new Chart(ctx, {
+            // The type of chart we want to create
+            type: "line",
+
+            // The data for our dataset
+            data: {
+                labels: dateArr[index],
+                datasets: [{
+                    label: "Close Price",
+                    backgroundColor: "rgb(80, 80, 80)",
+                    borderColor: "rgb(80, 80, 80)",
+                    data: closePriceArr[index],
+                    fill: false,
+                    lineTension: 0,
+                }, {
+                    label: "20 MA",
+                    backgroundColor: "rgb(0, 100, 255)",
+                    borderColor: "rgb(0, 100, 255)",
+                    data: ma20Arr[index],
+                    fill: false,
+                    lineTension: 0,
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    }
+
+    function newBarChart(index) {
+        return new Chart(barCtx, {
+            // The type of chart we want to create
+            type: "bar",
+
+            // The data for our dataset
+            data: {
+                labels: dateArr[index],
+                datasets: [{
+                    label: "Output",
+                    backgroundColor: "rgb(255, 100, 0)",
+                    data: outputArr[index],
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            display: false //this will remove only the label
+                        }
+                    }]
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

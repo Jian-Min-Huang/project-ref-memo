@@ -1,0 +1,5 @@
+rootProject.name = 'v-finance'
+include 'finance-core'
+include 'finance-task'
+include 'finance-service'
+include 'finance-web'
