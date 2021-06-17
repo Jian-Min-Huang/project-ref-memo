@@ -18,6 +18,7 @@
 
 ### Debug
 * cucumber-spring is on JUnit 4 so we can't exclude junit-vintage-engine
+* https://stackoverflow.com/questions/60982006/maven-tests-does-not-run-cucumber-scenarios-with-spring-boot-2-2-and-junit-5
 
 ### Plugin
 * AceJump
@@ -30,6 +31,8 @@
 * https://www.baeldung.com/cucumber-rest-api-testing
 * https://ithelp.ithome.com.tw/users/20010292/ironman/462
 * https://tw.alphacamp.co/blog/bdssd-tdd-cucumber-behaviour-driven-development
+* https://www.onejar99.com/bdd-cucumber-java-hello-example/
+* https://ithelp.ithome.com.tw/articles/10226615
 
 # Example
 * https://ruddyblog.wordpress.com/tag/%E5%AF%A6%E4%BE%8B%E5%8C%96%E9%9C%80%E6%B1%82/
